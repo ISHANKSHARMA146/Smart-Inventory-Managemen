@@ -34,3 +34,4 @@ This project is licensed under the MIT License, making it open and accessible fo
 Acknowledgments
 The Smart Inventory Management System is powered by FastAPI, Transformers, Torch, and other open-source libraries. We extend our gratitude to the community and contributors who make these tools available for developers worldwide.
 
+Start by clicking on grocery.html for use
