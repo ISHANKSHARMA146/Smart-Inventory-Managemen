@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grocery Item UI</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .item-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .item-info label {
+        font-weight: bold;
+    }
+
+    .quantity {
+        display: flex;
+        align-items: center;
+    }
+
+    .quantity input {
+        width: 50px;
+        text-align: center;
+        margin: 0 10px;
+    }
+
+    .expiration-date {
+        text-align: center;
+    }
+
+    .date-picker {
+        margin-top: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Grocery Item</h1>
+    <div class="item-info">
+        <label for="item-name">Item Name:</label>
+        <input type="text" id="item-name" placeholder="Enter item name">
+    </div>
+    <div class="item-info">
+        <label>Quantity:</label>
+        <div class="quantity">
+            <button id="decrease-btn">-</button>
+            <input type="text" id="quantity" value="1">
+            <button id="increase-btn">+</button>
+        </div>
+    </div>
+    <div class="item-info date-picker">
+        <label for="expiration-date">Expiration Date:</label>
+        <input type="date" id="expiration-date">
+    </div>
+    <div class="comment-box">
+        <label for="comment">Comments:</label>
+        <textarea id="comment" rows="4" placeholder=""></textarea>
+    </div>
+    <button id="add-item-btn">Add Item</button>
+    <button id="remove-item-btn">Remove Item</button>
+</div>
+
+<script>
+    document.getElementById('increase-btn').addEventListener('click', function() {
+        var quantityInput = document.getElementById('quantity');
+        var quantity = parseInt(quantityInput.value);
+        quantityInput.value = quantity + 1;
+    });
+
+    document.getElementById('decrease-btn').addEventListener('click', function() {
+        var quantityInput = document.getElementById('quantity');
+        var quantity = parseInt(quantityInput.value);
+        if (quantity > 1) {
+            quantityInput.value = quantity - 1;
+        }
+    });
+
+    document.getElementById('add-item-btn').addEventListener('click', function() {
+        var itemNameInput = document.getElementById('item-name');
+        var quantityInput = document.getElementById('quantity');
+        var expirationDateInput = document.getElementById('expiration-date');
+        var commentInput = document.getElementById('comment');
+
+        var newItem = {
+            itemName: itemNameInput.value,
+            quantity: parseInt(quantityInput.value),
+            expirationDate: expirationDateInput.value,
+            comments: commentInput.value
+        };
+
+        console.log(newItem);
+        // You can now process the newItem object as needed, for example, send it to the server.
+    });
+
+    document.getElementById('remove-item-btn').addEventListener('click', function() {
+        // Add logic to remove an item if needed
+        console.log('Item removed');
+    });
+
+    // Clear the placeholder value for the textarea
+    document.getElementById('comment').value = '';
+</script>
+</body>
+</html>

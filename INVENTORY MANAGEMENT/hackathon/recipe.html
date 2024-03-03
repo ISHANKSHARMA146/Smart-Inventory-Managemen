@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grocery List</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D5E7B8;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 8px 20px;
+    background-color: #005000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  button.remove {
+    margin-left: 10px;
+  }
+  
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Grocery List</h1>
+  <input type="text" id="itemInput" placeholder="Enter item">
+  <button onclick="addItem()">Add Item</button>
+  
+  <ul id="groceryList"></ul>
+  
+  <button onclick="getRecipe()">Get Recipe</button>
+</div>
+
+<script>
+let pantry = [];
+
+function addItem() {
+  const itemInput = document.getElementById("itemInput");
+  const item = itemInput.value.trim();
+  
+  if (item !== "") {
+    pantry.push(item);
+    renderList();
+    itemInput.value = "";
+  }
+}
+
+function removeItem(index) {
+  pantry.splice(index, 1);
+  renderList();
+}
+
+function renderList() {
+  const groceryList = document.getElementById("groceryList");
+  groceryList.innerHTML = "";
+  
+  pantry.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    
+    const button = document.createElement("button");
+    button.textContent = "Remove";
+    button.onclick = () => removeItem(index);
+    
+    li.appendChild(button);
+    groceryList.appendChild(li);
+  });
+}
+
+async function getRecipe() {
+  if (pantry.length === 0) {
+    alert("Please add items to the grocery list first.");
+    return;
+  }
+
+  const ingredients = pantry.join(",");
+  const appId = 'e4649005';
+  const appKey = '1756eb26503d7eb3d008018b3dcd7e15';
+  const url = `https://api.edamam.com/search?q=${encodeURIComponent(ingredients)}&app_id=${appId}&app_key=${appKey}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.hits && data.hits.length > 0) {
+      const recipe = data.hits[0].recipe;
+      window.open(recipe.url, '_blank');
+    } else {
+      alert("No recipe found for the selected ingredients.");
+    }
+  } catch (error) {
+    console.error("Error fetching recipe:", error);
+    alert("Failed to fetch recipe. Please try again later.");
+  }
+}
+</script>
+
+</body>
+</html>

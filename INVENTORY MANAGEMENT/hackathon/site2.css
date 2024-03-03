@@ -1,0 +1,300 @@
+.home-container {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .home-navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    z-index: 100;
+    align-items: center;
+    flex-direction: column;
+    background-color: #001400;
+  }
+  .home-navbar-interactive {
+    width: 100%;
+    display: flex;
+    max-width: 1280px;
+    align-items: center;
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-oneandhalfunits);
+    padding-right: var(--dl-space-space-oneandhalfunits);
+    justify-content: space-between;
+  }
+  .home-branding {
+    gap: var(--dl-space-space-halfunit);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .home-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .home-logo:hover {
+    transform: rotate(360deg);
+  }
+  .home-company {
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .home-items {
+    gap: var(--dl-space-space-threeunits);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .home-links {
+    gap: var(--dl-space-space-threeunits);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .home-burger-menu {
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .home-button {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    padding-top: 20px;
+    padding-left: var(--dl-space-space-oneandhalfunits);
+    border-radius: 56px;
+    padding-right: var(--dl-space-space-oneandhalfunits);
+    padding-bottom: 20px;
+    background-color: #235536;
+  }
+  .home-image {
+    width: 100px;
+    display: none;
+    object-fit: cover;
+  }
+  .home-text04 {
+    color: #ffffff;
+    display: flex;
+  }
+  .home-mobile-menu {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 32px;
+    z-index: 100;
+    position: fixed;
+    transform: translateX(100%);
+    transition: 0.5s;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #151515;
+  }
+  .home-nav {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .home-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--dl-space-space-threeunits);
+    justify-content: space-between;
+  }
+  .home-branding1 {
+    gap: var(--dl-space-space-halfunit);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .home-logo1 {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  .home-company1 {
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .home-menu-close {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .home-icon {
+    fill: var(--dl-color-gray-white);
+    width: 24px;
+    height: 24px;
+  }
+  .home-items1 {
+    gap: var(--dl-space-space-threeunits);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .home-links1 {
+    gap: var(--dl-space-space-threeunits);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .home-text09 {
+    color: #ffffff;
+  }
+  .home-hero {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: var(--dl-space-space-oneandhalfunits);
+    padding-right: var(--dl-space-space-oneandhalfunits);
+    flex-direction: column;
+    background-color: #c4dea4;
+  }
+  .home-header {
+    gap: var(--dl-space-space-twounits);
+    width: 100%;
+    display: flex;
+    max-width: 1280px;
+    align-items: flex-start;
+    padding-top: var(--dl-space-space-sixunits);
+    flex-direction: column;
+    padding-bottom: 150px;
+  }
+  .home-title {
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    font-size: 128px;
+    max-width: 895px;
+    font-weight: normal;
+    line-height: 115px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .home-text10 {
+    color: #001400;
+  }
+  .home-text11 {
+    color: #001400;
+  }
+  .home-text12 {
+    color: #001400;
+  }
+  .home-text13 {
+    color: #001400;
+  }
+  .home-text14 {
+    color: #001400;
+  }
+  .home-description {
+    color: rgb(255, 255, 255);
+    width: 100%;
+    font-size: 48px;
+    max-width: 800px;
+    line-height: 36px;
+  }
+  .home-container1 {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 106px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .home-text16 {
+    color: rgb(0, 20, 0);
+    width: 1586px;
+    font-family: "Merriweather";
+    padding-top: var(--dl-space-space-threeunits);
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    padding-left: var(--dl-space-space-twounits);
+    padding-bottom: var(--dl-space-space-oneandhalfunits);
+  }
+  @media(max-width: 991px) {
+    .home-navbar-interactive {
+      padding-top: var(--dl-space-space-unit);
+    }
+    .home-button {
+      padding-top: var(--dl-space-space-unit);
+      padding-left: var(--dl-space-space-unit);
+      padding-right: var(--dl-space-space-unit);
+      padding-bottom: var(--dl-space-space-unit);
+    }
+    .home-image {
+      width: 18px;
+      height: 18px;
+      display: flex;
+    }
+    .home-text04 {
+      display: none;
+    }
+    .home-button1 {
+      width: 100%;
+      font-size: 16px;
+      text-align: center;
+      border-radius: 40px;
+    }
+    .home-text09 {
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+    }
+    .home-header {
+      height: 100%;
+      padding-bottom: var(--dl-space-space-sixunits);
+      justify-content: center;
+    }
+    .home-description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  @media(max-width: 767px) {
+    .home-navbar-interactive {
+      padding-top: var(--dl-space-space-oneandhalfunits);
+    }
+    .home-logo {
+      width: 36px;
+      height: 36px;
+    }
+    .home-company {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    .home-items {
+      display: none;
+    }
+    .home-burger-menu {
+      display: flex;
+    }
+    .home-button {
+      padding: 12px;
+    }
+    .home-image {
+      width: 14px;
+      height: 14px;
+    }
+    .home-header {
+      padding-bottom: var(--dl-space-space-fiveunits);
+    }
+  }
+@media(max-width: 479px) {
+  .home-mobile-menu {
+    padding: 16px;
+  }
+}

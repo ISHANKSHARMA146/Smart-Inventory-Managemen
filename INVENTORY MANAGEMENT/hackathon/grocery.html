@@ -1,0 +1,271 @@
+<div>
+  <link href="site2.css" rel="stylesheet" />
+  <div class="home-container">
+    <div class="home-navbar">
+      <header data-thq="thq-navbar" class="home-navbar-interactive">
+        <div class="home-branding">
+          <img alt="image" src="LOGO 2.png" class="home-logo" />
+          <span class="home-company">BLUE-PR1NT</span>
+        </div>
+        <div class="home-items">
+          <div class="home-links">
+              <button class="nav-link" onclick="redirectToPage()" style="background-color: #D5E7B8; color: black; padding: 10px; margin-right: 10px;">Explore</button>
+              <button class="nav-link" onclick="redirectToPage4()" style="background-color: #D5E7B8; color: black; padding: 10px; margin-right: 10px;">Pantry</button>
+              <button class="nav-link" onclick="redirectToPage2()" style="background-color: #D5E7B8; color: black; padding: 10px; margin-right: 10px;">Grocery List</button>
+              <button class="nav-link" onclick="redirectToPage3()" style="background-color: #D5E7B8; color: black; padding: 10px; margin-right: 10px;">Get Recipe</button>
+              <button class="nav-link" style="background-color: #D5E7B8; color: black; padding: 10px; margin-right: 10px;">Scan</button>
+              <button class="nav-link" style="background-color: #D5E7B8; color: black; padding: 10px; margin-right: 10px;">Settings</button>
+              <script>
+                function redirectToPage() {
+                   window.location.href = 'explore.html';
+                }
+                function redirectToPage2() {
+                  window.location.href = 'grocery-list.html';
+                }
+                function redirectToPage3() {
+                  window.location.href = 'recipe.html';
+                }
+                function redirectToPage4() {
+                  window.location.href = 'pantry.html';
+                }
+            </script>
+          </div>
+        </div>
+        <div data-thq="thq-burger-menu" class="home-burger-menu">
+          <button class="home-button button">
+            <img alt="image" src="/hamburger.svg" class="home-image" />
+            <span class="home-text04">Start a project</span>
+          </button>
+        </div>
+        <div data-thq="thq-mobile-menu" class="home-mobile-menu">
+          <div data-thq="thq-mobile-menu-nav" data-role="Nav" class="home-nav">
+            <div class="home-top">
+              <div class="home-branding1">
+                <img alt="image" src="/logo.svg" class="home-logo1" />
+                <span class="home-company1">SPYRL</span>
+              </div>
+              <div data-thq="thq-close-menu" class="home-menu-close">
+                <svg viewBox="0 0 1024 1024" class="home-icon">
+                  <path
+                    d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                  ></path>
+                </svg>
+              </div>
+            </div>        
+          </div>
+        </div>
+      </header>
+    </div>
+    <header class="home-hero">
+      <div class="home-header">
+        <h1 class="home-title">GROCERIES MADE EASY</h1>
+        <p class="home-description">
+          No Longer need to worry about your Grocery Shopping now that we are
+          here!
+        </p>
+      </div>
+    </header>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f2f2f2;
+      }
+
+      .container {
+          max-width: 600px;
+          margin: 50px auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+          text-align: center;
+      }
+
+      .item-info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+      }
+
+      .item-info label {
+          font-weight: bold;
+      }
+
+      .quantity {
+          display: flex;
+          align-items: center;
+      }
+
+      .quantity input {
+          width: 50px;
+          text-align: center;
+          margin: 0 10px;
+      }
+
+      .expiration-date {
+          text-align: center;
+      }
+
+      .date-picker {
+          margin-top: 10px;
+      }
+
+      .comment-box {
+          margin-top: 10px;
+      }
+
+      .grocery-list {
+          margin-top: 30px;
+          border-top: 2px solid #ddd;
+          padding-top: 20px;
+      }
+
+      .grocery-list ul {
+          list-style-type: none;
+          padding: 0;
+      }
+
+      .grocery-list li {
+          margin-bottom: 10px;
+      }
+
+      button {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          background-color: #007bff;
+          color: #fff;
+          transition: background-color 0.3s;
+      }
+
+      button:hover {
+          background-color: #0056b3;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="container" style="padding-bottom: 100px;">
+      <h1>Grocery Item</h1>
+      <div class="item-info">
+          <label for="item-name">Item Name:</label>
+          <input type="text" id="item-name" placeholder="Enter item name">
+      </div>
+      <div class="item-info">
+          <label>Quantity:</label>
+          <div class="quantity">
+              <button id="decrease-btn" style="background-color: #005000;">-</button>
+              <input type="text" id="quantity" value="1">
+              <button id="increase-btn" style="background-color: #005000;">+</button>
+          </div>
+      </div>
+      <div class="item-info date-picker">
+          <label for="expiration-date">Expiration Date:</label>
+          <input type="date" id="expiration-date">
+      </div>
+      <div class="item-info comment-box">
+          <label for="comment">Comments:</label>
+          <textarea id="comment" rows="4" placeholder=""></textarea>
+      </div>
+      <button id="add-item-btn" style="background-color: #005000;">Add Item</button>
+      <button id="remove-item-btn" style="background-color: #005000;">Remove Item</button>
+
+      <button id="view-list-btn" style="background-color: #005000;">Grocery List</button>
+  </div>
+    <style>
+        /* Style for the footer */
+        footer {
+            background-color: #333; /* Dark background color */
+            color: #fff; /* Light text color */
+            padding: 20px; /* Add some padding */
+            text-align: center; /* Center-align text */
+            position: fixed; /* Fixed positioning */
+            bottom: 0; /* Stick to the bottom */
+            width: 100%; /* Full width */
+        }
+    </style>
+<body>
+    <footer>
+        <p>This is the footer. © 2024 Your Website</p>
+    </footer>
+</body>
+</html>
+
+
+  <script>
+      function saveToLocalStorage(item) {
+          let groceryList = JSON.parse(localStorage.getItem('groceryList')) || [];
+          groceryList.push(item);
+          localStorage.setItem('groceryList', JSON.stringify(groceryList));
+      }
+
+      function displayGroceryList() {
+          let groceryList = JSON.parse(localStorage.getItem('groceryList')) || [];
+          let groceryListContainer = document.getElementById('grocery-list-items');
+
+          groceryListContainer.innerHTML = '';
+
+          groceryList.forEach(function (item) {
+              let listItem = document.createElement('li');
+              listItem.textContent = `Item: ${item.itemName}, Quantity: ${item.quantity}, Expiration Date: ${item.expirationDate}, Comments: ${item.comments}`;
+              groceryListContainer.appendChild(listItem);
+          });
+      }
+
+      function redirectToShowList() {
+          location.href = 'grocery-list.html';
+      }
+
+      document.getElementById('increase-btn').addEventListener('click', function() {
+          var quantityInput = document.getElementById('quantity');
+          var quantity = parseInt(quantityInput.value);
+          quantityInput.value = quantity + 1;
+      });
+
+      document.getElementById('decrease-btn').addEventListener('click', function() {
+          var quantityInput = document.getElementById('quantity');
+          var quantity = parseInt(quantityInput.value);
+          if (quantity > 1) {
+              quantityInput.value = quantity - 1;
+          }
+      });
+
+      document.getElementById('add-item-btn').addEventListener('click', function() {
+          var itemNameInput = document.getElementById('item-name');
+          var quantityInput = document.getElementById('quantity');
+          var expirationDateInput = document.getElementById('expiration-date');
+          var commentInput = document.getElementById('comment');
+
+          var newItem = {
+              itemName: itemNameInput.value,
+              quantity: parseInt(quantityInput.value),
+              expirationDate: expirationDateInput.value,
+              comments: commentInput.value
+          };
+
+          saveToLocalStorage(newItem);
+
+          itemNameInput.value = '';
+          quantityInput.value = '1';
+          expirationDateInput.value = '';
+          commentInput.value = '';
+      });
+
+      document.getElementById('remove-item-btn').addEventListener('click', function() {
+          // Add logic to remove an item if needed
+          console.log('Item removed');
+      });
+
+      document.getElementById('view-list-btn').addEventListener('click', function() {
+          redirectToShowList();
+      });
+  </script>
+  </div>
+</div>

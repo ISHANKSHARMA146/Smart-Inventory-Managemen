@@ -1,0 +1,124 @@
+<!-- grocery-list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D5E7B8;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .grocery-list {
+            margin-top: 30px;
+            border-top: 2px solid #ddd;
+            padding-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a, button {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        a:hover, button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grocery List</h1>
+        <div class="grocery-list" id="grocery-list-container">
+            <table id="grocery-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Expiration Date</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody id="grocery-list-items"></tbody>
+            </table>
+        </div>
+        <a href="grocery.html">Go Back</a>
+        <button id="send-to-pantry-btn">Send to Pantry</button>
+    </div>
+
+    <script>
+        function displayGroceryList() {
+            let groceryList = JSON.parse(localStorage.getItem('groceryList')) || [];
+            let groceryListContainer = document.getElementById('grocery-list-items');
+
+            groceryListContainer.innerHTML = '';
+
+            groceryList.forEach(function (item) {
+                let tableRow = document.createElement('tr');
+                tableRow.innerHTML = `
+                    <td>${item.itemName}</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.expirationDate}</td>
+                    <td>${item.comments}</td>
+                `;
+                groceryListContainer.appendChild(tableRow);
+            });
+        }
+
+        document.getElementById('send-to-pantry-btn').addEventListener('click', function() {
+            // Transfer data to pantry
+            let groceryList = JSON.parse(localStorage.getItem('groceryList')) || [];
+            localStorage.setItem('pantryList', JSON.stringify(groceryList));
+
+            // Clear grocery list
+            localStorage.removeItem('groceryList');
+
+            // Redirect to pantry.html
+            window.location.href = 'pantry.html';
+        });
+
+        displayGroceryList();
+    </script>
+</body>
+</html>
